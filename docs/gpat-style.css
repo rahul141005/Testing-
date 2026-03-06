@@ -1,0 +1,206 @@
+/* gpat-style.css — Pandoc HTML/PDF stylesheet for GPAT Handbook */
+
+/* ─── Base typography ─────────────────────────────────────────── */
+body {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 11pt;
+  line-height: 1.6;
+  color: #1a1a1a;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ─── Headings ────────────────────────────────────────────────── */
+h1 {
+  font-size: 1.9em;
+  color: #003366;
+  border-bottom: 3px solid #003366;
+  padding-bottom: 0.3em;
+  margin-top: 2em;
+  page-break-before: always;
+  break-before: page;
+}
+
+h1:first-of-type {
+  page-break-before: avoid;
+  break-before: avoid;
+}
+
+h2 {
+  font-size: 1.4em;
+  color: #004d99;
+  border-bottom: 1px solid #a0b8d8;
+  margin-top: 1.8em;
+  padding-bottom: 0.2em;
+}
+
+h3 {
+  font-size: 1.15em;
+  color: #005580;
+  margin-top: 1.4em;
+}
+
+h4 {
+  font-size: 1em;
+  font-style: italic;
+  color: #333;
+  margin-top: 1.2em;
+}
+
+/* ─── Tables ──────────────────────────────────────────────────── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2em 0;
+  font-size: 0.95em;
+  page-break-inside: avoid;
+}
+
+th {
+  background-color: #003366;
+  color: #ffffff;
+  padding: 0.5em 0.8em;
+  text-align: left;
+  font-weight: bold;
+}
+
+td {
+  padding: 0.45em 0.8em;
+  border-bottom: 1px solid #dce8f5;
+}
+
+tr:nth-child(even) td {
+  background-color: #f0f6ff;
+}
+
+/* ─── Equations / math ────────────────────────────────────────── */
+.math.display {
+  margin: 1.2em 2em;
+  overflow-x: auto;
+}
+
+/* ─── Blockquotes (Trap/Note callouts) ────────────────────────── */
+blockquote {
+  background-color: #fff8e1;
+  border-left: 4px solid #f0a500;
+  padding: 0.8em 1.2em;
+  margin: 1.2em 0;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.97em;
+  color: #4a3800;
+  page-break-inside: avoid;
+}
+
+blockquote strong {
+  color: #b35900;
+}
+
+/* ─── Code / inline code ──────────────────────────────────────── */
+code {
+  font-family: "Courier New", monospace;
+  background: #f4f4f4;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+
+/* ─── Horizontal rules ────────────────────────────────────────── */
+hr {
+  border: none;
+  border-top: 2px solid #cce0ff;
+  margin: 1.5em 0;
+}
+
+/* ─── Lists ───────────────────────────────────────────────────── */
+ul, ol {
+  margin: 0.6em 0 0.6em 1.5em;
+}
+
+li {
+  margin-bottom: 0.3em;
+}
+
+/* ─── Title page ──────────────────────────────────────────────── */
+#title-block-header {
+  text-align: center;
+  margin-bottom: 3em;
+  padding: 2em;
+  background: linear-gradient(135deg, #003366 0%, #005580 100%);
+  color: white;
+  border-radius: 8px;
+}
+
+#title-block-header .title {
+  font-size: 2.2em;
+  font-weight: bold;
+  color: white;
+  border: none;
+  margin: 0;
+}
+
+#title-block-header .subtitle {
+  font-size: 1.3em;
+  color: #a8d4ff;
+  margin: 0.3em 0;
+}
+
+#title-block-header .author,
+#title-block-header .date {
+  font-size: 1em;
+  color: #cce0ff;
+}
+
+/* ─── TOC ─────────────────────────────────────────────────────── */
+nav#TOC {
+  background: #f0f6ff;
+  border: 1px solid #a0b8d8;
+  border-radius: 4px;
+  padding: 1em 1.5em;
+  margin-bottom: 2em;
+}
+
+nav#TOC a {
+  color: #003366;
+  text-decoration: none;
+}
+
+nav#TOC a:hover {
+  text-decoration: underline;
+  color: #0055aa;
+}
+
+/* ─── Print / PDF overrides ───────────────────────────────────── */
+@media print {
+  body {
+    font-size: 10.5pt;
+    color: #000;
+  }
+
+  h1 {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  h2, h3 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  table {
+    page-break-inside: avoid;
+  }
+
+  blockquote {
+    page-break-inside: avoid;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  nav#TOC {
+    page-break-after: always;
+  }
+}
