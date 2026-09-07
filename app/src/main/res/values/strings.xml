@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Lumenfall</string>
+    <string name="app_subtitle">Echoes of the Shifting Citadel</string>
+    <string name="new_run">Begin Echo</string>
+    <string name="continue_run">Continue</string>
+    <string name="settings">Settings</string>
+    <string name="codex">Codex</string>
+    <string name="quit">Quit</string>
+</resources>
